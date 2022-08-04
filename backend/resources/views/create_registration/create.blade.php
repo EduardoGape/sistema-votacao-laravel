@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Quest registration</title>
 </head>
 <body>
     <form action="{{route('registration')}}" method="POST" >
+        @csrf
         <label for="" class="title_la">Quest Title</label><br/>
         <input type="text" class="title_in" id="title" name="title"><br/>
 

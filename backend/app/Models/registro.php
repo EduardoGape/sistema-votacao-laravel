@@ -9,5 +9,5 @@ class registro extends Model
 {
     use HasFactory;
     protected $fillable =['title','token','num_votes'];
-    protected $dateFormat = ['dt_start','dt_end'];
+    protected $dates = ['dt_start','dt_end'];
 }

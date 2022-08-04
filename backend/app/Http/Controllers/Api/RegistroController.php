@@ -37,13 +37,24 @@ class RegistroController extends Controller
     public function store(Request $request)
     {
 
-        registro::created([
-            'title' => $request->title,
-            'token' => $request->token,
-            'num_votes' => $request->num_votes,
-            'dt_start' => $request->dt_start,
-            'dt_end' => $request->dt_end
-        ]);
+        $event = new registro;
+        $event->title = $request->title;
+        $event->token = $request->token;
+        $event->num_votes = $request->num_votes;
+        $event->dt_start = $request->dt_start;
+        $event->dt_end = $request->dt_end;
+        $event->save();
+
+        //return redirect('/');
+
+
+        // registro::created([
+        //     'title' => $request->title,
+        //     'token' => $request->token,
+        //     'num_votes' => $request->num_votes,
+        //     'dt_start' => $request->dt_start,
+        //     'dt_end' => $request->dt_end
+        // ]);
 
         return "Successfully registered";
 
